@@ -1,6 +1,6 @@
 import React, { useState, useCallback, memo } from "react"
 import { Link } from "gatsby"
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa"
+import { FaBars, FaTimes } from "react-icons/fa"
 import { IoIosArrowDown } from "react-icons/io"
 
 // Navigation data - moved outside component to avoid re-creation on render

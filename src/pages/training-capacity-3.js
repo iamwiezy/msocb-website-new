@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -14,10 +15,9 @@ const TrainingCapacity3 = () => {
           Training and Capacity Building of the staff in the Meghalaya State
           Organic Certification Body (MSOCB)
         </h1>
-        <img
-          src={TrainingCapacityPic3}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-3.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           10 days Online Training by Shri Dorairaj K., Consultant organic

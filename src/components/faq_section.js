@@ -1,10 +1,7 @@
 import React, { useState } from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import { ChevronRight } from "lucide-react" // Using Lucide React Icons
 import { Link } from "gatsby"
-
-import Person1 from "../images/person-1.jpg"
-import Person2 from "../images/person-2.jpg"
-import Person3 from "../images/person-3.jpg"
 
 const faqs = [
   {
@@ -37,9 +34,9 @@ const FAQSection = () => {
         {/* Left Section: Image & Contact Box */}
         <div className="relative w-full md:w-1/2">
           <div className="bg-green-300 rounded-lg p-6">
-            <img
-              src={Person1}
-              alt="Farmer with organic produce"
+            <StaticImage
+              src="../images/person-1.jpg"
+              alt="Training Capacity"
               className="rounded-lg shadow-lg"
             />
             <div className="absolute bottom-6 left-6 bg-yellow-400 p-3 rounded-lg shadow-md text-center">

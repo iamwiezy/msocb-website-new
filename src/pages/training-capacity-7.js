@@ -1,8 +1,8 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import TrainingCapacityPic7 from "../images/training-capacity-7.jpg"
 
 const TrainingCapacity7 = () => {
   return (
@@ -16,10 +16,9 @@ const TrainingCapacity7 = () => {
           supervision of Shri Dorairaj K., Consultant Organic certification on
           the 15th March 2024
         </h1>
-        <img
-          src={TrainingCapacityPic7}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-7.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           The field inspection to an ICS group under the facilitation of the

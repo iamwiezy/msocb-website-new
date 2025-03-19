@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -16,10 +17,9 @@ const TrainingCapacity8 = () => {
           crop production as per NPOP conducted by Mr. Dorairaj K (Consultant
           Organic Farming) engaged by MSOCB on the 16th March 2024
         </h1>
-        <img
-          src={TrainingCapacityPic8}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-8.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           A one day training on TraceNet was conducted for the staff of MSOCB

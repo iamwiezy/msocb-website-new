@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -16,10 +17,9 @@ const TrainingCapacity6 = () => {
           facilitation of Directorate of Horticulture, Government of Meghalaya
           which was held on the 12th March, 2024
         </h1>
-        <img
-          src={TrainingCapacityPic6}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-6.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           The field inspection to an ICS group facilitated by the Directorate of

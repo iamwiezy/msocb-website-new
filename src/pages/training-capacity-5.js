@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -16,10 +17,9 @@ const TrainingCapacity5 = () => {
           collection area conducted by Shri Dorairaj, Consultant Organic
           Certification held from 13th - 18th June, 2022
         </h1>
-        <img
-          src={TrainingCapacityPic5}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-5.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           Staff in the Meghalaya State Organic Certification Body (MSOCB) were

@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -14,10 +15,9 @@ const TrainingCapacity9 = () => {
           Exposure Visit of MSOCB Team to KSOCA from 27th November 2023 to 1st
           December 2023
         </h1>
-        <img
-          src={TrainingCapacityPic9}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-9.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           As a new CB to be established, the team from the Meghalaya State

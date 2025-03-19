@@ -1,8 +1,8 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import TrainingCapacityPic2 from "../images/training-capacity-2.jpg"
 
 const TrainingCapacity2 = () => {
   return (
@@ -14,10 +14,9 @@ const TrainingCapacity2 = () => {
           Training on Sampling Procedures organized by MSOCB from 16th-17th
           April 2024
         </h1>
-        <img
-          src={TrainingCapacityPic2}
-          alt="Service 1"
-          className="w-full h-60 object-cover rounded-lg"
+        <StaticImage
+          src="../images/training-capacity-2.jpg"
+          alt="Training Capacity"
         />
         <p className="mt-4 text-base">
           A two day training programme on Sample Collection and Sending
