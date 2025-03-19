@@ -40,7 +40,6 @@
     "gatsby"
   ],
   "license": "0BSD",
-  "homepage": "https://bantei0604.github.io/msocb_website",
 
   "scripts": {
     "build": "gatsby build",
@@ -49,9 +48,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+   
   },
   "repository": {
     "type": "git",
