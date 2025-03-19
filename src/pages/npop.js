@@ -2,6 +2,8 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import Npop from "../images/NPOP.png"
+import { MdNaturePeople } from "react-icons/md"
 const NPOP = () => {
   return (
     <>
@@ -28,7 +30,7 @@ const NPOP = () => {
           <div className="text-green-900 text-4xl font-extrabold uppercase">
             <h1>Understanding NPOP</h1>
           </div>
-          <img src="/images/NPOP.png" alt="NPOP Logo" className="w-60" />
+          <img src={Npop} alt="NPOP Logo" className="w-60" />
         </div>
 
         {/* Content Section */}

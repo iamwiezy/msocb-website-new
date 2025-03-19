@@ -1,45 +1,50 @@
 import React from "react"
 
+import Person1 from "../images/person-1.jpg"
+import Person2 from "../images/person-2.jpg"
+import Person3 from "../images/person-3.jpg"
+import Person4 from "../images/person-4.jpg"
+
 const teamMembers = [
   {
     name: "Gunanka DB, IFS",
     role: "COO",
-    image: "/images/person-3.jpg",
+    image: Person3,
   },
   {
     name: "Rafael",
     role: "Quality Manager, MSOCB",
-    image: "/images/person-3.jpg",
+    image: Person3,
   },
   {
     name: "Yooda",
     role: "Evaluator, MSOCB",
-    image: "/images/person-3.jpg",
+    image: Person3,
   },
   {
     name: "Daphi",
     role: "Inspector/Auditor, MSOCB",
-    image: "/images/person-4.jpg",
+    image: Person4,
   },
   {
     name: "Rikyr",
     role: "Inspector/Auditor, MSOCB",
-    image: "/images/person-4.jpg",
+    image: Person4,
   },
   {
     name: "Aibor",
     role: "Inspector/Auditor, MSOCB",
-    image: "/images/person-3.jpg",
+    image: Person3,
   },
   {
     name: "Dari",
     role: "Inspector/Auditor, mSOCB",
-    image: "/images/person-2.jpg",
+    image: Person4,
   },
   {
     name: "Bantei",
     role: "Program Associate IT, MSOCB",
-    image: "/images/person-3.jpg",
+    image: Person3,
   },
 ]
 

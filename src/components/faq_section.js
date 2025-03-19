@@ -2,6 +2,10 @@ import React, { useState } from "react"
 import { ChevronRight } from "lucide-react" // Using Lucide React Icons
 import { Link } from "gatsby"
 
+import Person1 from "../images/person-1.jpg"
+import Person2 from "../images/person-2.jpg"
+import Person3 from "../images/person-3.jpg"
+
 const faqs = [
   {
     question: "How can a farmer get organic certification?",
@@ -34,7 +38,7 @@ const FAQSection = () => {
         <div className="relative w-full md:w-1/2">
           <div className="bg-green-300 rounded-lg p-6">
             <img
-              src="/images/person-1.jpg"
+              src={Person1}
               alt="Farmer with organic produce"
               className="rounded-lg shadow-lg"
             />

@@ -3,6 +3,12 @@ import { FaPlay, FaPause } from "react-icons/fa"
 import { Link } from "gatsby"
 import Masonry from "react-masonry-css"
 
+import PreviewImage1 from "../images/gal-1.jpg"
+import PreviewImage2 from "../images/gal-2.jpg"
+import PreviewImage3 from "../images/gal-3.jpg"
+
+import Video from "../images/video-2.mp4"
+
 const VideoSection = () => {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -18,11 +24,7 @@ const VideoSection = () => {
     }
   }
 
-  const previewImages = [
-    "/images/gal-1.jpg",
-    "/images/gal-2.jpg",
-    "/images/gal-3.jpg",
-  ]
+  const previewImages = [PreviewImage1, PreviewImage2, PreviewImage3]
 
   const breakpointColumns = {
     default: 3,
@@ -37,7 +39,7 @@ const VideoSection = () => {
           <video
             ref={videoRef}
             className="absolute top-0 left-0 w-full h-full object-cover"
-            src="/images/video-2.mp4"
+            src={Video}
             type="video/mp4"
             loop
             muted

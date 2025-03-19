@@ -16,7 +16,7 @@ const TrainingCapacity6 = () => {
           which was held on the 12th March, 2024
         </h1>
         <img
-          src="/images/training-capacity-6.jpg"
+          src="../images/training-capacity-6.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

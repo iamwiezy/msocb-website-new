@@ -12,51 +12,61 @@ import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import { Link } from "gatsby"
 
+import TrainingCapacity1 from "../images/training-capacity-1.jpg"
+import TrainingCapacity2 from "../images/training-capacity-2.jpg"
+import TrainingCapacity3 from "../images/training-capacity-3.jpg"
+import TrainingCapacity4 from "../images/training-capacity-4.jpg"
+import TrainingCapacity5 from "../images/training-capacity-5.jpg"
+import TrainingCapacity6 from "../images/training-capacity-6.jpg"
+import TrainingCapacity7 from "../images/training-capacity-7.jpg"
+import TrainingCapacity8 from "../images/training-capacity-8.jpg"
+import TrainingCapacity9 from "../images/training-capacity-9.jpg"
+
 const cardsData = [
   {
     description:
       "Training on Organic Certification Standards organized by Directorate of Horticulture, Meghalaya, Shillong from 5th- 7th June 2024",
-    imgSrc: "/images/training-capacity-1.jpg",
+    imgSrc: TrainingCapacity1,
   },
   {
     description:
       "Training on Sampling Procedures organized by MSOCB from 16th-17th April 2024",
-    imgSrc: "/images/training-capacity-2.jpg",
+    imgSrc: TrainingCapacity2,
   },
   {
     description:
       "Training and Capacity Building of the staff in the Meghalaya State Organic Certification Body (MSOCB)",
-    imgSrc: "/images/training-capacity-3.jpg",
+    imgSrc: TrainingCapacity3,
   },
   {
     description:
       "5 days training conducted by Indian Institute of Plantation Management (IIPM), Bengaluru at BRDC, Upper Shillong from 1st to 5th March 2022",
-    imgSrc: "/images/training-capacity-4.jpg",
+    imgSrc: TrainingCapacity4,
   },
   {
     description:
       "6-days mock field training programme on inspection for individual farmer, farmer groups (Internal Control System-ICS group) and wild collection area conducted by Shri Dorairaj, Consultant Organic Certification held from 13th - 18th June, 2022",
-    imgSrc: "/images/training-capacity-5.jpg",
+    imgSrc: TrainingCapacity5,
   },
   {
     description:
       "Mock field training programme on inspection for Internal Control System-ICS group) conducted by the team from MSOCB under the facilitation of Directorate of Horticulture, Government of Meghalaya which was held on the 12th March, 2024",
-    imgSrc: "/images/training-capacity-6.jpg",
+    imgSrc: TrainingCapacity6,
   },
   {
     description:
       "Mock field Training programme on inspection for Internal Control System-ICS Group) conducted by the Team from MSOCB under the supervision of Shri Dorairaj K., Consultant Organic certification on the 15th March 2024",
-    imgSrc: "/images/training-capacity-7.jpg",
+    imgSrc: TrainingCapacity7,
   },
   {
     description:
       "Training on TraceNet operations and the training encompasses the step for Registration of operators under the different categories under crop production as per NPOP conducted by Mr. Dorairaj K (Consultant Organic Farming) engaged by MSOCB on the 16th March 2024",
-    imgSrc: "/images/training-capacity-8.jpg",
+    imgSrc: TrainingCapacity8,
   },
   {
     description:
       "Exposure Visit of MSOCB Team to KSOCA from 27th November 2023 to 1st December 2023",
-    imgSrc: "/images/training-capacity-9.jpg",
+    imgSrc: TrainingCapacity9,
   },
 ]
 

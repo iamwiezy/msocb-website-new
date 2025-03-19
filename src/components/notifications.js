@@ -1,6 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Notification1 from "../images/notification-1.jpg"
+import Notification2 from "../images/notification-2.jpg"
+import Notification3 from "../images/notification-3.jpg"
+
 // Define a NotificationItem component for better reusability and readability
 const NotificationItem = ({ id, title, description, image }) => {
   return (
@@ -25,19 +29,19 @@ const Notifications = () => {
       id: 1,
       title: "Notification 01",
       description: "Advertisement for the first post",
-      image: "/images/notification-1.jpg",
+      image: Notification1,
     },
     {
       id: 2,
       title: "Notification 02",
       description: "Notification about who got the job",
-      image: "/images/notification-2.jpg",
+      image: Notification2,
     },
     {
       id: 3,
       title: "Notification 03",
       description: "Notification about some other stuffs",
-      image: "/images/notification-3.jpg",
+      image: Notification3,
     },
   ]
 

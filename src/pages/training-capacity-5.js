@@ -16,7 +16,7 @@ const TrainingCapacity5 = () => {
           Certification held from 13th - 18th June, 2022
         </h1>
         <img
-          src="/images/training-capacity-5.jpg"
+          src="../images/training-capacity-5.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

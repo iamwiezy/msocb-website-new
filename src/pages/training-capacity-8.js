@@ -16,7 +16,7 @@ const TrainingCapacity8 = () => {
           Organic Farming) engaged by MSOCB on the 16th March 2024
         </h1>
         <img
-          src="/images/training-capacity-8.jpg"
+          src="../images/training-capacity-8.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

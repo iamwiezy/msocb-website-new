@@ -14,7 +14,7 @@ const TrainingCapacity1 = () => {
           of Horticulture, Meghalaya, Shillong from 5th- 7th June 2024
         </h1>
         <img
-          src="/images/training-capacity-1.jpg"
+          src="../images/training-capacity-1.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

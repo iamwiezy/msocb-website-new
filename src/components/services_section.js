@@ -1,20 +1,10 @@
 import React from "react"
-import {
-  GiFarmer,
-  GiFruitTree,
-  GiWheat,
-  GiGrain,
-  GiFarmTractor,
-  GiTomato,
-  GiGrass,
-  GiPlantRoots,
-  GiSunflower,
-  GiWateringCan,
-  GiShovel,
-  GiSprout,
-} from "react-icons/gi"
+import { GiWheat, GiSunflower, GiSprout } from "react-icons/gi"
 import "./fonts.css"
 import { Link } from "gatsby"
+import Notification1 from "../images/notification-1.jpg"
+import Notification2 from "../images/notification-2.jpg"
+import Notification3 from "../images/notification-3.jpg"
 
 const Services_section = () => {
   return (
@@ -33,7 +23,7 @@ const Services_section = () => {
           {/* Image at Top-Center */}
           <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-md ">
             <img
-              src="/images/notification-1.jpg"
+              src={Notification1}
               alt="Organic crop"
               className="w-full h-full object-cover"
             />
@@ -60,7 +50,7 @@ const Services_section = () => {
         <Link to="/service-1">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src="/images/notification-1.jpg"
+              src={Notification2}
               alt="Individual"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
@@ -75,7 +65,7 @@ const Services_section = () => {
         <Link to="/service-2">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src="/images/notification-2.jpg"
+              src={Notification3}
               alt="Grower Group"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
@@ -90,7 +80,7 @@ const Services_section = () => {
         <Link to="/service-3">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src="/images/notification-3.jpg"
+              src={Notification1}
               alt="Wild Collection"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />

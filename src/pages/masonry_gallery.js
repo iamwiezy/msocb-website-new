@@ -4,19 +4,32 @@ import "../components/fonts.css"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+
+import Gallery1 from "../images/gal-1.jpg"
+import Gallery2 from "../images/gal-2.jpg"
+import Gallery3 from "../images/gal-3.jpg"
+import Gallery4 from "../images/gal-4.jpg"
+import Gallery5 from "../images/gal-5.jpg"
+import Gallery6 from "../images/gal-6.jpg"
+import Gallery7 from "../images/gal-7.jpg"
+import Gallery8 from "../images/gal-8.jpg"
+import Gallery9 from "../images/gal-9.jpg"
+import Gallery10 from "../images/gal-10.jpg"
+import Gallery11 from "../images/gal-11.jpg"
+import Gallery12 from "../images/gal-12.jpg"
 const images = [
-  "/images/gal-1.jpg",
-  "/images/gal-2.jpg",
-  "/images/gal-3.jpg",
-  "/images/gal-4.jpg",
-  "/images/gal-5.jpg",
-  "/images/gal-6.jpg",
-  "/images/gal-7.jpg",
-  "/images/gal-8.jpg",
-  "/images/gal-9.jpg",
-  "/images/gal-10.jpg",
-  "/images/gal-11.jpg",
-  "/images/gal-12.jpg",
+  Gallery1,
+  Gallery2,
+  Gallery3,
+  Gallery4,
+  Gallery5,
+  Gallery6,
+  Gallery7,
+  Gallery8,
+  Gallery9,
+  Gallery10,
+  Gallery11,
+  Gallery12,
 ]
 
 const MasonryGallery = () => {

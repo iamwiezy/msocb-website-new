@@ -14,7 +14,7 @@ const TrainingCapacity4 = () => {
           (IIPM), Bengaluru at BRDC, Upper Shillong from 1st to 5th March 2022
         </h1>
         <img
-          src="/images/training-capacity-4.jpg"
+          src="../images/training-capacity-4.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

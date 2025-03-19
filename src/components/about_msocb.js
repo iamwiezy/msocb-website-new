@@ -1,6 +1,9 @@
 import { Link } from "gatsby"
 import React from "react"
 import "./fonts.css"
+import Notification1 from "../images/notification-1.jpg"
+import Notification2 from "../images/notification-2.jpg"
+import Notification3 from "../images/notification-3.jpg"
 
 const About_msocb = () => {
   return (
@@ -10,7 +13,7 @@ const About_msocb = () => {
         {/* Large Circular Image */}
         <div className="relative group w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-lg">
           <img
-            src="/images/notification-3.jpg"
+            src={Notification1}
             alt="Farming"
             className="w-full h-full object-cover"
           />
@@ -24,7 +27,7 @@ const About_msocb = () => {
         <div className="flex flex-col items-center gap-4">
           <div className="relative group w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
             <img
-              src="/images/notification-2.jpg"
+              src={Notification2}
               alt="Organic Farming"
               className="w-full h-full object-cover"
             />
@@ -38,7 +41,7 @@ const About_msocb = () => {
 
           <div className="relative group w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
             <img
-              src="/images/notification-1.jpg"
+              src={Notification3}
               alt="Fresh Produce"
               className="w-full h-full object-cover"
             />

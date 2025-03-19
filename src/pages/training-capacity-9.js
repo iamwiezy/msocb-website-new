@@ -14,7 +14,7 @@ const TrainingCapacity9 = () => {
           December 2023
         </h1>
         <img
-          src="/images/training-capacity-9.jpg"
+          src="../images/training-capacity-9.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

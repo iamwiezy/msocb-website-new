@@ -1,27 +1,31 @@
 import React from "react"
 import { User, MessageCircle } from "lucide-react"
 
+import Gallery1 from "../images/gal-1.jpg"
+import Gallery2 from "../images/gal-2.jpg"
+import Gallery3 from "../images/gal-3.jpg"
+
 const articles = [
   {
     title: "Partnerships to Support Organic Farmers",
     date: "05 July 2023",
     author: "MSOCB",
     comments: 12,
-    image: "/images/gal-1.jpg",
+    image: Gallery1,
   },
   {
     title: "Meghalaya State Organic and Natural Farming Policy 2023",
     date: "05 August 2023",
     author: "MSOCB",
     comments: 12,
-    image: "/images/gal-2.jpg",
+    image: Gallery2,
   },
   {
     title: "Policy Initiatives for Sustainable Agriculture",
     date: "05 November 2024",
     author: "MSOCB",
     comments: 12,
-    image: "/images/gal-3.jpg",
+    image: Gallery3,
   },
 ]
 

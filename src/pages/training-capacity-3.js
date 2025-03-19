@@ -14,7 +14,7 @@ const TrainingCapacity3 = () => {
           Organic Certification Body (MSOCB)
         </h1>
         <img
-          src="/images/training-capacity-3.jpg"
+          src="../images/training-capacity-3.jpg"
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />
