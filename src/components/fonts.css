@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Manrope:wght@200..800&display=swap");
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "League Spartan", sans-serif;
+}
