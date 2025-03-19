@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import TrainingCapacityPic5 from "../images/training-capacity-5.jpg"
 
 const TrainingCapacity5 = () => {
   return (
@@ -16,7 +17,7 @@ const TrainingCapacity5 = () => {
           Certification held from 13th - 18th June, 2022
         </h1>
         <img
-          src="../images/training-capacity-5.jpg"
+          src={TrainingCapacityPic5}
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

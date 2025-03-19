@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import TrainingCapacityPic3 from "../images/training-capacity-3.jpg"
 
 const TrainingCapacity3 = () => {
   return (
@@ -14,7 +15,7 @@ const TrainingCapacity3 = () => {
           Organic Certification Body (MSOCB)
         </h1>
         <img
-          src="../images/training-capacity-3.jpg"
+          src={TrainingCapacityPic3}
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import TrainingCapacityPic2 from "../images/training-capacity-2.jpg"
 
 const TrainingCapacity2 = () => {
   return (
@@ -14,7 +15,7 @@ const TrainingCapacity2 = () => {
           April 2024
         </h1>
         <img
-          src="../images/training-capacity-2.jpg"
+          src={TrainingCapacityPic2}
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

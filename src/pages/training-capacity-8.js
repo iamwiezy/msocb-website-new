@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import TrainingCapacityPic8 from "../images/training-capacity-8.jpg"
 
 const TrainingCapacity8 = () => {
   return (
@@ -16,7 +17,7 @@ const TrainingCapacity8 = () => {
           Organic Farming) engaged by MSOCB on the 16th March 2024
         </h1>
         <img
-          src="../images/training-capacity-8.jpg"
+          src={TrainingCapacityPic8}
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />

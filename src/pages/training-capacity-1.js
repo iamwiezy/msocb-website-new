@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import TrainingCapacityPic1 from "../images/training-capacity-1.jpg"
 
 const TrainingCapacity1 = () => {
   return (
@@ -14,7 +15,7 @@ const TrainingCapacity1 = () => {
           of Horticulture, Meghalaya, Shillong from 5th- 7th June 2024
         </h1>
         <img
-          src="../images/training-capacity-1.jpg"
+          src={TrainingCapacityPic1}
           alt="Service 1"
           className="w-full h-60 object-cover rounded-lg"
         />
