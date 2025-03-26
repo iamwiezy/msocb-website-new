@@ -3,7 +3,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import TrainingCapacityPic1 from "../images/training-capacity-1.jpg"
 
 const TrainingCapacity1 = () => {
   return (
