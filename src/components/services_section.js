@@ -23,7 +23,7 @@ const Services_section = () => {
           {/* Image at Top-Center */}
           <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-md ">
             <img
-              src={Notification1}
+              src="https://images.pexels.com/photos/10079693/pexels-photo-10079693.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Organic crop"
               className="w-full h-full object-cover"
             />
@@ -50,7 +50,7 @@ const Services_section = () => {
         <Link to="/service-1">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src={Notification2}
+              src="https://images.pexels.com/photos/4433935/pexels-photo-4433935.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Individual"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
@@ -65,7 +65,7 @@ const Services_section = () => {
         <Link to="/service-2">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src={Notification3}
+              src="https://images.pexels.com/photos/4433935/pexels-photo-4433935.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Grower Group"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
@@ -80,7 +80,7 @@ const Services_section = () => {
         <Link to="/service-3">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src={Notification1}
+              src="https://images.pexels.com/photos/10079693/pexels-photo-10079693.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Wild Collection"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
