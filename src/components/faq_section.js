@@ -55,22 +55,26 @@ const FAQSection = () => {
 
           <div className="mt-6 space-y-4">
             {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-gray-100 p-4 rounded-lg shadow-md cursor-pointer flex items-center justify-between"
-                onClick={() => toggleFAQ(index)}
-              >
-                <p className="font-medium">{faq.question}</p>
-                <button className="p-2 bg-green-300 rounded-full">
-                  <ChevronRight size={20} />
-                </button>
+              <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <div
+                  className="flex items-center justify-between cursor-pointer"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <p className="font-medium">{faq.question}</p>
+                  <button className="p-2 bg-green-300 rounded-full">
+                    <ChevronRight
+                      size={20}
+                      className={`${
+                        openIndex === index ? "rotate-90" : ""
+                      } transition-transform`}
+                    />
+                  </button>
+                </div>
+                {openIndex === index && (
+                  <p className="mt-2 text-gray-600 text-sm">{faq.answer}</p>
+                )}
               </div>
             ))}
-            {openIndex !== null && (
-              <p className="mt-2 text-gray-600 text-sm">
-                {faqs[openIndex].answer}
-              </p>
-            )}
           </div>
         </div>
       </div>
@@ -82,7 +86,7 @@ const FAQSection = () => {
         </Link>
       </div>
     </>
-  )
+  );
 }
 
 export default FAQSection
