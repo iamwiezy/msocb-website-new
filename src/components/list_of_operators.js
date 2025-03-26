@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const ListOfOperators = () => {
   const data = [
@@ -128,43 +128,45 @@ const ListOfOperators = () => {
       category: "Crop Production",
       crops: "Black Pepper",
     },
-  ]
+  ];
   return (
     <div>
       <div className="max-w-6xl mx-auto p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center uppercase">
-          List Of Operators{" "}
+          List Of Operators
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse rounded-lg shadow-md">
-            <thead>
-              <tr className="bg-green-600 text-white text-left text-base">
-                <th className="p-3">Sl. No.</th>
-                <th className="p-3">ICS Name</th>
-                <th className="p-3">Organic Status</th>
-                <th className="p-3">Category</th>
-                <th className="p-3">Crops</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((item, index) => (
-                <tr
-                  key={item.id}
-                  className="border-b hover:bg-gray-100 transition text-base"
-                >
-                  <td className="p-3">{index + 1}</td>
-                  <td className="p-3">{item.name}</td>
-                  <td className="p-3">{item.status}</td>
-                  <td className="p-3">{item.category}</td>
-                  <td className="p-3">{item.crops}</td>
+          <div className="max-h-96 overflow-y-auto border rounded-lg shadow-md">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-green-600 text-white text-left text-base">
+                  <th className="p-3">Sl. No.</th>
+                  <th className="p-3">ICS Name</th>
+                  <th className="p-3">Organic Status</th>
+                  <th className="p-3">Category</th>
+                  <th className="p-3">Crops</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {data.map((item, index) => (
+                  <tr
+                    key={item.id}
+                    className="border-b hover:bg-gray-100 transition text-base"
+                  >
+                    <td className="p-3">{index + 1}</td>
+                    <td className="p-3">{item.name}</td>
+                    <td className="p-3">{item.status}</td>
+                    <td className="p-3">{item.category}</td>
+                    <td className="p-3">{item.crops}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ListOfOperators
+export default ListOfOperators;
