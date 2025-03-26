@@ -86,7 +86,7 @@ const About_msocb = () => {
         <ul className="mt-6 text-gray-700">
           <li className="flex items-center space-x-2">
             <span className="text-green-500">✅</span>
-            <p>NPOP Compliant & APEDA Accredited</p>
+            <p>APEDA accredited for NPOP organic certification</p>
           </li>
           <li className="flex items-center space-x-2">
             <span className="text-green-500">✅</span>
