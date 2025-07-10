@@ -3,7 +3,12 @@ import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import VideoSection from "../components/video_section"
-import ListOfOperators from "../components/list_of_operators"
+import BannerImage from "../images/banner.jpg"
+import about from "../images/home-page.jpg"
+import about2 from "../images/home-page-1.jpg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { faTable } from "@fortawesome/free-solid-svg-icons" // Represents tabular data
 const About_Section = () => {
   return (
     <div>
@@ -14,8 +19,7 @@ const About_Section = () => {
         <div
           className="relative w-full h-64 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+            backgroundImage: `url(${BannerImage})`,
           }}
         >
           {" "}
@@ -33,7 +37,7 @@ const About_Section = () => {
           <div className="relative w-full md:w-1/2">
             <div className="w-full h-auto rounded-lg overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/2321837/pexels-photo-2321837.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src={about}
                 alt="Farm"
                 className="w-full rounded-lg shadow-lg"
               />{" "}
@@ -42,7 +46,7 @@ const About_Section = () => {
             <div className="absolute -bottom-8 left-8 w-48 h-36 bg-green-500 rounded-lg"></div>
             <div className="absolute -bottom-4 left-4 w-48 h-36 overflow-hidden rounded-lg shadow-lg">
               <img
-                src="https://images.pexels.com/photos/916406/pexels-photo-916406.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src={about2}
                 alt="Farmer"
                 className="w-full h-full object-cover"
               />{" "}
@@ -51,7 +55,7 @@ const About_Section = () => {
           </div>
 
           {/* Text Section */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 text-justify">
             <p className="text-green-600 uppercase text-sm font-semibold">
               Get to Know Us
             </p>
@@ -73,7 +77,7 @@ const About_Section = () => {
               NPOP standard guidelines.anic crop production, wild collection,
               and related activities.
             </p>
-            <p className="text-gray-600 mt-4">
+            <p className="text-gray-600 mt-4 align-center">
               <span className="text-green-500 font-semibold">
                 {" "}
                 Meghalaya State Organic Certification Body (MSOCB)
@@ -92,8 +96,45 @@ const About_Section = () => {
           </div>
         </div>
       </div>
+      {/* <ListOfOperators /> */}
+      <div className="cursor-pointer w-full max-w-3xl mx-auto rounded-2xl mb-6 border border-green-900 bg-white px-8 py-6 text-green-900 shadow-lg transition-all duration-300 hover:shadow-xl">
+        <div className="flex items-center space-x-6">
+          {/* Icon Section */}
+          <div className="flex-shrink-0">
+            <div className="h-16 w-16 flex items-center justify-center rounded-full bg-green-100">
+              <FontAwesomeIcon
+                icon={faTable}
+                className="text-green-600 text-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Text Content */}
+          <div className="flex-1">
+            <a
+              href="https://docs.google.com/spreadsheets/d/1FscCHEHUbDDBckkZ4IBgP_En4Uf4i-7SJLf9hR-CjbU/edit?gid=0#gid=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xl font-bold text-green-900 hover:underline"
+            >
+              List of Operators under MSOCB
+            </a>
+            <p className="text-green-700 mt-1 text-sm">
+              Click to view the official spreadsheet of certified operators
+              listed under the Meghalaya State Organic Certification Board.
+            </p>
+          </div>
+
+          {/* Right Arrow */}
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="text-green-500 text-xl"
+          />
+        </div>
+      </div>
       <VideoSection />
-      <section className="max-w-4xl mx-auto py-16 px-6 text-gray-800">
+
+      <section className="max-w-4xl mx-auto py-16 px-6 text-gray-800 text-justify">
         <h2 className="text-4xl font-bold text-center mb-8 uppercase">
           Our Vision, Mission & Core Values
         </h2>
@@ -141,7 +182,6 @@ const About_Section = () => {
         </div>
       </section>
 
-      <ListOfOperators />
       <Footer />
     </div>
   )

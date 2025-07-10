@@ -42,12 +42,12 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: "gatsby-source-drupal",
-    //   options: {
-    //     baseUrl: "",
-    //     apiBase: "jsonapi", // optional
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-drupal",
+      options: {
+        baseUrl: "https://be.msocb.org/",
+        apiBase: "jsonapi", // optional
+      },
+    },
   ],
 }

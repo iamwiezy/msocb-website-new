@@ -2,6 +2,11 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import BannerImage from "../images/banner.jpg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { faTable } from "@fortawesome/free-solid-svg-icons" // Represents tabular data
+import certificationProcedure from "../images/certification-procedure.png"
 import { Link } from "gatsby"
 
 const services = [
@@ -39,8 +44,7 @@ const ServicesPage = () => {
       <div
         className="relative w-full h-64 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+          backgroundImage: `url(${BannerImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -98,9 +102,46 @@ const ServicesPage = () => {
           </div>
         </div>
 
+        {/* <ListOfOperators /> */}
+        <div className="cursor-pointer w-full max-w-3xl mx-auto rounded-2xl mb-6 border border-green-900 bg-white px-8 py-6 text-green-900 shadow-lg transition-all duration-300 hover:shadow-xl">
+          <div className="flex items-center space-x-6">
+            {/* Icon Section */}
+            <div className="flex-shrink-0">
+              <div className="h-16 w-16 flex items-center justify-center rounded-full bg-green-100">
+                <FontAwesomeIcon
+                  icon={faTable}
+                  className="text-green-600 text-2xl"
+                />
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="flex-1">
+              <a
+                href="https://docs.google.com/spreadsheets/d/1FscCHEHUbDDBckkZ4IBgP_En4Uf4i-7SJLf9hR-CjbU/edit?gid=0#gid=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-xl font-bold text-green-900 hover:underline"
+              >
+                List of Operators under MSOCB
+              </a>
+              <p className="text-green-700 mt-1 text-sm">
+                Click to view the official spreadsheet of certified operators
+                listed under the Meghalaya State Organic Certification Board.
+              </p>
+            </div>
+
+            {/* Right Arrow */}
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="text-green-500 text-xl"
+            />
+          </div>
+        </div>
+
         <section className="flex justify-center my-10">
           <img
-            src="/images/certification-procedure.png"
+            src={certificationProcedure}
             alt="Certification Procedure"
             className="max-w-4xl w-full"
           />

@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import BannerImage from "../images/banner.jpg"
 
 const ContactPage = () => {
   return (
@@ -11,8 +12,7 @@ const ContactPage = () => {
       <div
         className="relative w-full h-64 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+          backgroundImage: `url(${BannerImage})`,
         }}
       >
         {" "}
@@ -31,7 +31,7 @@ const ContactPage = () => {
             <p>
               MSOCB ensures organic certification, maintaining authenticity and
               quality, while supporting farmers in sustainable agriculture
-              across Meghalaya and beyond.  
+              across Meghalaya and beyond.
             </p>
           </div>
           <div className="bg-yellow-500 text-white p-6 rounded-lg shadow-md">
@@ -48,13 +48,18 @@ const ContactPage = () => {
 
         {/* Contact Form & Map */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 mt-10 mb-8">
-          {/* Google Map Embed */}
-          <div className="rounded-lg overflow-hidden shadow-md  ">
+          {/* Updated Google Map Embed for MSOCB */}
+          <div className="rounded-lg overflow-hidden shadow-md">
             <iframe
-              title="Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d921.7488534235648!2d91.82182575889259!3d25.54200808017961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3750874387075a2f%3A0xfc4f516296b2ac4f!2sHolistic%20Wellness%20Center!5e1!3m2!1sen!2sin!4v1741603244883!5m2!1sen!2sin"
-              className="w-full min-h-full"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.8848838248236!2d91.81985877517546!3d25.5422111774904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37508700600fa837%3A0x543914e4cb8904a4!2sMeghalaya%20State%20Organic%20Certification%20Body!5e0!3m2!1sen!2sin!4v1746697594366!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-[450px]"
+              title="MSOCB Location"
             ></iframe>
           </div>
 

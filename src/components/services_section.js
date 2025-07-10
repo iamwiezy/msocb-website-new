@@ -2,6 +2,11 @@ import React from "react"
 import { GiWheat, GiSunflower, GiSprout } from "react-icons/gi"
 import "./fonts.css"
 import { Link } from "gatsby"
+import BannerImage from "../images/banner.jpg"
+import logo from "../images/msocb_logo.png"
+import individual from "../images/individual1.jpg"
+import group from "../images/grower_group1.jpg"
+import wild_collection from "../images/wild_collection.jpg"
 import Notification1 from "../images/notification-1.jpg"
 import Notification2 from "../images/notification-2.jpg"
 import Notification3 from "../images/notification-3.jpg"
@@ -21,9 +26,9 @@ const Services_section = () => {
       <div className="flex justify-center mt-8">
         <div className="relative w-[340px] md:w-[400px] bg-yellow-400 rounded-xl overflow-hidden shadow-lg flex flex-col items-center p-6">
           {/* Image at Top-Center */}
-          <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-md ">
+          <div className="p-2 w-36 h-40 md:w-44 md:h-44 bg-white rounded-full overflow-hidden border-4 border-white shadow-md ">
             <img
-              src="https://images.pexels.com/photos/10079693/pexels-photo-10079693.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src={logo}
               alt="Organic crop"
               className="w-full h-full object-cover"
             />
@@ -50,7 +55,7 @@ const Services_section = () => {
         <Link to="/service-1">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src="https://images.pexels.com/photos/4433935/pexels-photo-4433935.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src={individual}
               alt="Individual"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
@@ -65,7 +70,7 @@ const Services_section = () => {
         <Link to="/service-2">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src="https://images.pexels.com/photos/4433935/pexels-photo-4433935.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src={group}
               alt="Grower Group"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />
@@ -80,7 +85,7 @@ const Services_section = () => {
         <Link to="/service-3">
           <div className="relative w-full max-w-[280px] mx-auto">
             <img
-              src="https://images.pexels.com/photos/10079693/pexels-photo-10079693.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src={wild_collection}
               alt="Wild Collection"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
             />

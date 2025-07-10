@@ -9,7 +9,7 @@ const Home_Page = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <StaticImage
-          src="../images/home-page-1.JPG"
+          src="../images/home_page.jpeg"
           alt="Farming in Meghalaya"
           placeholder="blurred"
           layout="fullWidth"

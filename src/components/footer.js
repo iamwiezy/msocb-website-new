@@ -1,10 +1,19 @@
 import React from "react"
+import { Link } from "gatsby"
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md"
 import { FiArrowRight } from "react-icons/fi"
 import LogoImg from "../images/MSOCB-removebg-preview.png"
 
 const Footer = () => {
+  const NAV_ITEMS = [
+    { name: "About", link: "/about_section" },
+    { name: "Services", link: "/services_page" },
+    { name: "NPOP", link: "/npop" },
+    { name: "Notification", link: "/notification_page" },
+    { name: "FAQ", link: "/faq_page" },
+    { name: "Contact", link: "/contact_page" },
+  ]
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -23,54 +32,16 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold text-2xl">Explore</h3>
             <ul className="mt-2 space-y-2 text-sm ">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-green-400 no-underline text-white"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-green-400 no-underline text-white"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-green-400 no-underline text-white"
-                >
-                  NPOP
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-green-400 no-underline text-white"
-                >
-                  Meet the Farmers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-green-400 no-underline text-white"
-                >
-                  Notifications
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-green-400 no-underline text-white"
-                >
-                  Contact
-                </a>
-              </li>
+              {NAV_ITEMS.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    to={item.link}
+                    className="hover:text-green-400 no-underline text-white"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -101,7 +72,8 @@ const Footer = () => {
           <h3 className="text-white font-semibold text-2xl">Contact</h3>
           <ul className="mt-2 space-y-2 text-sm">
             <li className="flex items-center">
-              <MdPhone size={16} className="mr-2 text-green-400" /> 635285045
+              <MdPhone size={16} className="mr-2 text-green-400" />
+              +91 6033426943
             </li>
             <li className="flex items-center">
               <MdEmail size={16} className="mr-2 text-green-400" />{" "}

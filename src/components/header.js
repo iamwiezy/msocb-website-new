@@ -24,7 +24,16 @@ const ContactItem = memo(({ icon: Icon, text, href }) => (
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-md py-4">
+    <header
+      className="bg-white shadow-md py-4"
+      style={{
+        backgroundColor: "#ffffff",
+        opacity: 0.8,
+        backgroundImage: "radial-gradient(#22c55e 0.5px, #ffffff 0.5px)",
+        backgroundSize: "10px 10px",
+      }}
+    >
+      {/* Container for the header content */}
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-evenly px-6 lg:px-12">
         {/* Logo */}
         <div className="mb-4 lg:mb-0">
@@ -54,9 +63,7 @@ const Header = () => {
           <ContactItem
             icon={FaMapMarkerAlt}
             text={CONTACT_INFO.address}
-            href={`https://maps.google.com/?q=${encodeURIComponent(
-              CONTACT_INFO.address
-            )}`}
+            href={`https://maps.app.goo.gl/UiWqUarhMR3XTpJ26`}
           />
         </div>
       </div>

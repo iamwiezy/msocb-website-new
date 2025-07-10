@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { ChevronRight } from "lucide-react" // Using Lucide React Icons
 import { Link } from "gatsby"
+import logo from "../images/msocb_logo.png"
 
 const faqs = [
   {
@@ -33,13 +34,13 @@ const FAQSection = () => {
       <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto p-6 gap-6">
         {/* Left Section: Image & Contact Box */}
         <div className="relative w-full md:w-1/2">
-          <div className="bg-green-300 rounded-lg p-6">
+          <div className="bg-white rounded-lg p-6">
             <StaticImage
-              src="../images/person-1.jpg"
+              src="../images/msocb_logo.png"
               alt="Training Capacity"
               className="rounded-lg shadow-lg"
             />
-            <div className="absolute bottom-6 left-6 bg-yellow-400 p-3 rounded-lg shadow-md text-center">
+            <div className="absolute bottom-6 left-6 bg-green-400 p-3 rounded-lg shadow-md text-center">
               <p className="text-sm text-white">Call us anytime</p>
               <p className="font-bold text-lg text-black">+91 60334 26943</p>
             </div>
@@ -66,12 +67,14 @@ const FAQSection = () => {
                       size={20}
                       className={`${
                         openIndex === index ? "rotate-90" : ""
-                      } transition-transform`}
+                      } duration-300 ease-in-out transition-all`}
                     />
                   </button>
                 </div>
                 {openIndex === index && (
-                  <p className="mt-2 text-gray-600 text-sm">{faq.answer}</p>
+                  <p className="mt-2 text-gray-600 text-sm duration-300 ease-in-out transition-all">
+                    {faq.answer}
+                  </p>
                 )}
               </div>
             ))}
@@ -86,7 +89,7 @@ const FAQSection = () => {
         </Link>
       </div>
     </>
-  );
+  )
 }
 
 export default FAQSection

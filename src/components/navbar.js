@@ -18,6 +18,13 @@ const NAV_ITEMS = [
       { name: "Organizational Structure", link: "/organizational_structure" },
       { name: "Activities", link: "/activities" },
       { name: "Training Capacities", link: "/training_capacities" },
+      { name: "Team Members", link: "/team_section" },
+      {
+        name: "List of operators under MSOCB",
+        link: "https://docs.google.com/spreadsheets/d/1FscCHEHUbDDBckkZ4IBgP_En4Uf4i-7SJLf9hR-CjbU/edit?gid=0#gid=0",
+        external: true,
+        target: "_blank",
+      },
     ],
   },
   { name: "FAQ", link: "/faq_page" },

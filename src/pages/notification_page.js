@@ -1,37 +1,78 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-const notifications = [
-  {
-    title: "Organic Certification Open",
-    description:
-      "Farmers/growers groups can apply for NOP organic certification. Register today!",
-    image:
-      "https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    title: "New Accreditation",
-    description:
-      "MOCA is now officially accredited under NOP for third-party organic certification.",
-    image:
-      "https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    title: "Important Update",
-    description:
-      "Organic exporters must ensure compliance with NPOP certification before shipment.",
-    image:
-      "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-]
+import BannerImage from "../images/banner.jpg"
 
-const latestPosts = [
-  "Organic Certification Open",
-  "New Accreditation Available",
-  "Apply for the Certification",
-]
 const Notification_page = () => {
+  const [notifications, setNotifications] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  const GRAPHQL_ENDPOINT =
+    process.env.GATSBY_GRAPHQL_ENDPOINT || "http://localhost:8000/___graphql"
+
+  const query = `
+    {
+      allNodeNotic {
+        nodes {
+          field_date
+          title
+          path {
+            alias
+          }
+          relationships {
+            field_upload_pdf {
+              localFile {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+
+  const fetchNotifications = async () => {
+    try {
+      const response = await fetch(GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      })
+
+      const result = await response.json()
+
+      if (result.data && result.data.allNodeNotic.nodes) {
+        setNotifications(result.data.allNodeNotic.nodes)
+      } else {
+        throw new Error("No notifications found")
+      }
+    } catch (error) {
+      setError(`Error fetching notifications: ${error.message}`)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchNotifications()
+  }, [])
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>{error}</div>
+  }
+
+  if (notifications.length === 0) {
+    return <div>No notifications found</div>
+  }
+
   return (
     <>
       <Header />
@@ -39,12 +80,9 @@ const Notification_page = () => {
       <div
         className="relative w-full h-64 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+          backgroundImage: `url(${BannerImage})`,
         }}
       >
-        {" "}
-        {/* Update Image Path */}
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
           <p className="text-sm uppercase">Home / Notification</p>
@@ -59,19 +97,24 @@ const Notification_page = () => {
               {notifications.map((notif, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-lg overflow-hidden"
+                  className="bg-white shadow-md rounded-lg overflow-hidden p-6"
                 >
-                  <img
-                    src={notif.image}
-                    alt={notif.title}
-                    className="w-full h-56 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-green-700 font-semibold text-xl">
+                  <h3 className="text-green-700 font-semibold text-xl">
+                    <a
+                      href={
+                        notif.relationships.field_upload_pdf[0]?.localFile
+                          ?.url || notif.path.alias
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
                       {notif.title}
-                    </h3>
-                    <p className="text-gray-700 mt-2">{notif.description}</p>
-                  </div>
+                    </a>
+                  </h3>
+                  <p className="text-gray-600 mt-1 text-sm">
+                    {notif.field_date}
+                  </p>
                 </div>
               ))}
             </div>
@@ -80,10 +123,13 @@ const Notification_page = () => {
             <div className="bg-white p-6 shadow-md rounded-lg">
               <h3 className="text-xl font-semibold mb-4">Latest Posts</h3>
               <ul className="space-y-3">
-                {latestPosts.map((post, index) => (
+                {notifications.slice(0, 5).map((notif, index) => (
                   <li key={index} className="border-b pb-2 last:border-none">
-                    <a href="#" className="text-green-600 hover:underline">
-                      {post}
+                    <a
+                      href={notif.path.alias}
+                      className="text-green-600 hover:underline"
+                    >
+                      {notif.title}
                     </a>
                   </li>
                 ))}

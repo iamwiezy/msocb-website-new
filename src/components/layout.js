@@ -52,13 +52,13 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Navbar />
       <Home_Page />
-      <Notifications />
+      {/* <Notifications /> */}
       <About_msocb />
       <Services_section />
       <VideoSection />
       <FAQSection />
       <Team_section />
-      <NewsSection />
+      {/* <NewsSection /> */}
       <Footer />
     </>
   )
