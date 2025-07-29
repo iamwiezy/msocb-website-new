@@ -1,9 +1,11 @@
 require("dotenv").config({
-  path: `.env`,
+  path: `.env.${process.env.NODE_ENV}` || `.env`,
 });
+
 
 module.exports = {
   // Remove pathPrefix for Vercel
+  pathPrefix: "/msocb-website-new",
   siteMetadata: {
     title: `MSOCB Website`,
     description: `Organic Certification Portal for Meghalaya.`,
