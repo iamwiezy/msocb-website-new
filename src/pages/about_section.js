@@ -5,7 +5,7 @@ import Footer from "../components/footer"
 import VideoSection from "../components/video_section"
 import BannerImage from "../images/banner.jpg"
 import about from "../images/home-page.jpg"
-import about2 from "../images/home-page-1.jpg"
+import about2 from "../images/home-page-1.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { faTable } from "@fortawesome/free-solid-svg-icons" // Represents tabular data
