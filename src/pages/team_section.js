@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby" // Import useStaticQuery
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 
 const TeamSection = () => {
-  const [teamMembers, setTeamMembers] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  const GRAPHQL_ENDPOINT =
-    process.env.GATSBY_GRAPHQL_ENDPOINT || "http://localhost:8000/___graphql"
-
-  const query = `
-    {
+  // 1. Define your GraphQL query using `graphql` tag
+  const data = useStaticQuery(graphql`
+    query TeamMembersQuery {
       allNodeWhoIsWho {
         nodes {
           title
@@ -31,7 +26,10 @@ const TeamSection = () => {
         }
       }
     }
-  `
+  `)
+
+  const teamMembers = data.allNodeWhoIsWho.nodes || []
+
   const getPyramidRows = members => {
     const rows = []
     let start = 0
@@ -45,42 +43,6 @@ const TeamSection = () => {
     }
 
     return rows
-  }
-
-  const fetchTeamData = async () => {
-    try {
-      const response = await fetch(GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query }),
-      })
-
-      const result = await response.json()
-
-      if (result.data && result.data.allNodeWhoIsWho.nodes) {
-        setTeamMembers(result.data.allNodeWhoIsWho.nodes)
-      } else {
-        throw new Error("No data found")
-      }
-    } catch (error) {
-      setError(`Error fetching team data: ${error.message}`)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    fetchTeamData()
-  }, [])
-
-  if (loading) {
-    return <div>Loading...</div>
-  }
-
-  if (error) {
-    return <div>{error}</div>
   }
 
   if (teamMembers.length === 0) {
