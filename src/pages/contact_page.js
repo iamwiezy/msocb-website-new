@@ -9,20 +9,19 @@ const ContactPage = () => {
     <>
       <Header />
       <Navbar />
+
+      {/* Banner */}
       <div
-        className="relative w-full h-64 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${BannerImage})`,
-        }}
+        className="relative w-full h-60 md:h-72 bg-cover bg-center"
+        style={{ backgroundImage: `url(${BannerImage})` }}
       >
-        {" "}
-        {/* Update Image Path */}
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <p className="text-sm uppercase">Home / Contact</p>
-          <h1 className="text-3xl font-bold">Contact</h1>
+        <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm" />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
+          <p className="text-sm uppercase tracking-widest">Home / Contact</p>
+          <h1 className="text-4xl md:text-5xl font-bold mt-1">Contact</h1>
         </div>
       </div>
+
       <div className="max-w-7xl mx-auto">
         {/* Contact Info Boxes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 mt-10">
@@ -48,7 +47,7 @@ const ContactPage = () => {
 
         {/* Contact Form & Map */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 mt-10 mb-8">
-          {/* Updated Google Map Embed for MSOCB */}
+          {/* Google Map */}
           <div className="rounded-lg overflow-hidden shadow-md">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.8848838248236!2d91.81985877517546!3d25.5422111774904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37508700600fa837%3A0x543914e4cb8904a4!2sMeghalaya%20State%20Organic%20Certification%20Body!5e0!3m2!1sen!2sin!4v1746697594366!5m2!1sen!2sin"
@@ -66,19 +65,36 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold mb-4">Write a Message</h3>
-            <form>
+            <form
+              action="https://formsubmit.co/msocbinfo009@gmail.com"
+              method="POST"
+            >
+              {/* Formsubmit Config */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_autoresponse" value="Thank you for contacting MSOCB!" />
+              <input type="hidden" name="_subject" value="New message from MSOCB website" />
+              {/* Optional redirect after submit */}
+              {/* <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" /> */}
+
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
+                required
                 className="w-full p-3 rounded-md border mb-4"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
+                required
                 className="w-full p-3 rounded-md border mb-4"
               />
               <textarea
+                name="message"
                 placeholder="Write a message"
+                required
                 className="w-full p-3 rounded-md border mb-4 h-32"
               ></textarea>
               <button
@@ -91,6 +107,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   )

@@ -10,20 +10,16 @@ const NPOP = () => {
     <>
       <Header />
       <Navbar />
-      <div
-        className="relative w-full h-64 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${BannerImage})`,
-        }}
-      >
-        {" "}
-        {/* Update Image Path */}
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <p className="text-sm uppercase">Home / NPOP</p>
-          <h1 className="text-3xl font-bold">NPOP</h1>
-        </div>
-      </div>
+    <div
+            className="relative w-full h-60 md:h-72 bg-cover bg-center"
+            style={{ backgroundImage: `url(${BannerImage})` }}
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm" />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
+              <p className="text-sm uppercase tracking-widest">Home / NPOP</p>
+              <h1 className="text-4xl md:text-5xl font-bold mt-1">NPOP</h1>
+            </div>
+          </div>
       <div className="max-w-6xl mx-auto p-6">
         {/* Hero Section */}
         <div className="bg-green-200 rounded-lg shadow-lg p-8 flex flex-col  items-center justify-center">

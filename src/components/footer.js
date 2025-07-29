@@ -22,8 +22,7 @@ const Footer = () => {
           <img src={LogoImg} alt="MSOCB Logo" className="h-10" />{" "}
           {/* Update logo path */}
           <p className="text-sm mt-2">
-            This is just a demo text for the footer of MSOCB, the real data will
-            be updated later once everything is finalized!
+            MSOCB ensures organic certification, maintaining authenticity and quality, while supporting farmers in sustainable agriculture across Meghalaya and beyond.
           </p>
         </div>
 
@@ -45,22 +44,33 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-semibold text-2xl">News</h3>
+            <h3 className="text-white font-semibold text-2xl">External Links</h3>
             <ul className="mt-2 space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
+                  href="https://apeda.gov.in/"
+                  target="_blank"
                   className="hover:text-green-400 no-underline text-white"
                 >
-                  Partnerships to support organic farmers
+                  APEDA
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://megbrdc.nic.in/"
+                  target="_blank"
                   className="hover:text-green-400 no-underline text-white"
                 >
-                  Meghalaya State Organic & Natural Farming Policy
+                  BRDC
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://meghalaya.gov.in/"
+                  target="_blank"
+                  className="hover:text-green-400 no-underline text-white"
+                >
+                  Government of Meghalaya
                 </a>
               </li>
             </ul>

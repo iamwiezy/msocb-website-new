@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import {
   Card,
   CardHeader,
@@ -7,133 +8,125 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import { Link } from "gatsby"
-
-import TrainingCapacity1 from "../images/training-capacity-1.jpg"
-import TrainingCapacity2 from "../images/training-capacity-2.jpg"
-import TrainingCapacity3 from "../images/training-capacity-3.jpg"
-import TrainingCapacity4 from "../images/training-capacity-4.jpg"
-import TrainingCapacity5 from "../images/training-capacity-5.jpg"
-import TrainingCapacity6 from "../images/training-capacity-6.jpg"
-import TrainingCapacity7 from "../images/training-capacity-7.jpg"
-import TrainingCapacity8 from "../images/training-capacity-8.jpg"
-import TrainingCapacity9 from "../images/training-capacity-9.jpg"
-
-const cardsData = [
-  {
-    description:
-      "Training on Organic Certification Standards organized by Directorate of Horticulture, Meghalaya, Shillong from 5th- 7th June 2024",
-    imgSrc: TrainingCapacity1,
-  },
-  {
-    description:
-      "Training on Sampling Procedures organized by MSOCB from 16th-17th April 2024",
-    imgSrc: TrainingCapacity2,
-  },
-  {
-    description:
-      "Training and Capacity Building of the staff in the Meghalaya State Organic Certification Body (MSOCB)",
-    imgSrc: TrainingCapacity3,
-  },
-  {
-    description:
-      "5 days training conducted by Indian Institute of Plantation Management (IIPM), Bengaluru at BRDC, Upper Shillong from 1st to 5th March 2022",
-    imgSrc: TrainingCapacity4,
-  },
-  {
-    description:
-      "6-days mock field training programme on inspection for individual farmer, farmer groups (Internal Control System-ICS group) and wild collection area conducted by Shri Dorairaj, Consultant Organic Certification held from 13th - 18th June, 2022",
-    imgSrc: TrainingCapacity5,
-  },
-  {
-    description:
-      "Mock field training programme on inspection for Internal Control System-ICS group) conducted by the team from MSOCB under the facilitation of Directorate of Horticulture, Government of Meghalaya which was held on the 12th March, 2024",
-    imgSrc: TrainingCapacity6,
-  },
-  {
-    description:
-      "Mock field Training programme on inspection for Internal Control System-ICS Group) conducted by the Team from MSOCB under the supervision of Shri Dorairaj K., Consultant Organic certification on the 15th March 2024",
-    imgSrc: TrainingCapacity7,
-  },
-  {
-    description:
-      "Training on TraceNet operations and the training encompasses the step for Registration of operators under the different categories under crop production as per NPOP conducted by Mr. Dorairaj K (Consultant Organic Farming) engaged by MSOCB on the 16th March 2024",
-    imgSrc: TrainingCapacity8,
-  },
-  {
-    description:
-      "Exposure Visit of MSOCB Team to KSOCA from 27th November 2023 to 1st December 2023",
-    imgSrc: TrainingCapacity9,
-  },
-]
 
 const ITEMS_PER_PAGE = 6
 
 const TrainingCapacities = () => {
   const [currentPage, setCurrentPage] = useState(1)
 
-  const totalPages = Math.ceil(cardsData.length / ITEMS_PER_PAGE)
+  const data = useStaticQuery(graphql`
+    query {
+      allNodeTraining(sort: { field_traning_date: DESC }) {
+        nodes {
+          title
+          field_traning_date(formatString: "DD-MM-YYYY")
+          path {
+            alias
+          }
+          body {
+            processed
+          }
+          relationships {
+            field_choose_photo {
+              relationships {
+                field_media_image {
+                  localFile {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  // Get the cards for the current page
+  const nodes = data.allNodeTraining.nodes
+  const totalPages = Math.ceil(nodes.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
-  const currentCards = cardsData.slice(startIndex, startIndex + ITEMS_PER_PAGE)
+  const currentNodes = nodes.slice(startIndex, startIndex + ITEMS_PER_PAGE)
 
   return (
     <>
       <Header />
       <Navbar />
-      <div className="container mx-auto px-4 py-10">
-        <Typography variant="h3" color="blue-gray" className="text-center mb-8">
+      <div className="container mx-auto px-4 py-12">
+        <Typography variant="h2" className="text-center mb-10 text-blue-gray-800">
           Training Capacities
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {currentCards.map((card, index) => (
-            <Card key={index} className="shadow-lg rounded-lg overflow-hidden">
-              <CardHeader className="relative h-56">
-                <img
-                  src={card.imgSrc}
-                  alt="card-image"
-                  className="w-full h-full object-cover rounded-t-lg"
-                />
-              </CardHeader>
-              <CardBody className="p-4">
-                <Typography className="text-gray-600 text-base">
-                  {card.description}
-                </Typography>
-              </CardBody>
-              <CardFooter className="p-4 pt-0">
-                <Link
-                  to={`/training-capacity-${startIndex + index + 1}`}
-                  key={startIndex + index}
-                >
-                  <Button className="w-full">Read More</Button>
-                </Link>{" "}
-              </CardFooter>
-            </Card>
-          ))}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {currentNodes.map((node, index) => {
+            const imgSrc =
+              node.relationships.field_choose_photo?.[0]?.relationships?.field_media_image?.localFile?.url || null
+
+            return (
+              <Card
+                key={index}
+                className="shadow-xl rounded-2xl transition-transform hover:-translate-y-1 hover:shadow-2xl bg-white"
+              >
+                <CardHeader floated={false} className="relative h-56 overflow-hidden">
+                  {imgSrc ? (
+                    <img
+                      src={imgSrc}
+                      alt="Training Image"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="bg-gray-200 w-full h-full flex items-center justify-center text-gray-500 text-sm">
+                      No Image Available
+                    </div>
+                  )}
+                </CardHeader>
+
+                <CardBody className="px-5 py-4">
+                  <Typography variant="h6" className="mb-2 text-blue-gray-900 font-semibold">
+                    {node.title}
+                  </Typography>
+                  <Typography className="text-sm text-gray-500">
+                    {node.field_traning_date}
+                  </Typography>
+                </CardBody>
+
+                <CardFooter className="px-5 pb-5">
+                  <Link to={node.path.alias}>
+                    <Button fullWidth className="bg-blue-600 hover:bg-blue-700">
+                      Read More
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            )
+          })}
         </div>
 
-        {/* Pagination Controls */}
-        <div className="flex justify-center mt-8 space-x-4">
+        {/* Pagination */}
+        <div className="flex justify-center items-center mt-12 gap-4">
           <Button
+            variant="outlined"
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-4 py-2"
+            className="flex items-center gap-2 px-4"
           >
-            Previous
+            <ChevronLeftIcon className="h-4 w-4" /> Previous
           </Button>
-          <Typography variant="h6" className="flex items-center">
+
+          <Typography variant="h6" className="text-blue-gray-700">
             Page {currentPage} of {totalPages}
           </Typography>
+
           <Button
+            variant="outlined"
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="px-4 py-2"
+            className="flex items-center gap-2 px-4"
           >
-            Next
+            Next <ChevronRightIcon className="h-4 w-4" />
           </Button>
         </div>
       </div>

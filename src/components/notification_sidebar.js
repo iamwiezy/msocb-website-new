@@ -1,17 +1,10 @@
-// src/components/NotificationSidebar.js
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const NotificationSidebar = () => {
-  const [notifications, setNotifications] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  const GRAPHQL_ENDPOINT =
-    process.env.GATSBY_GRAPHQL_ENDPOINT || "http://localhost:8000/___graphql"
-
-  const query = `
-    {
-      allNodeNotic {
+  const data = useStaticQuery(graphql`
+    query {
+      allNodeNotic(sort: { fields: changed, order: DESC }, limit: 5) {
         nodes {
           title
           path {
@@ -20,55 +13,44 @@ const NotificationSidebar = () => {
         }
       }
     }
-  `
+  `)
 
-  useEffect(() => {
-    const fetchNotifications = async () => {
-      try {
-        const response = await fetch(GRAPHQL_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query }),
-        })
+  const notifications = data.allNodeNotic.nodes
 
-        const result = await response.json()
-
-        if (result.data?.allNodeNotic?.nodes) {
-          setNotifications(result.data.allNodeNotic.nodes)
-        } else {
-          throw new Error("No notifications found")
-        }
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchNotifications()
-  }, [])
-
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>Error loading notifications: {error}</div>
-  if (notifications.length === 0) return <div>No notifications found</div>
+  if (!notifications || notifications.length === 0) {
+    return (
+      <div className="bg-white p-6 shadow-md rounded-lg">
+        <h3 className="text-xl font-semibold mb-4">Latest Notifications</h3>
+        <p className="text-gray-500">No notifications found.</p>
+      </div>
+    )
+  }
 
   return (
     <div className="bg-white p-6 shadow-md rounded-lg">
-      <h3 className="text-xl font-semibold mb-4">Latest Notifications</h3>
+      <h3 className="text-xl font-semibold mb-4 text-teal-800">
+        Latest Notifications
+      </h3>
       <ul className="space-y-3">
-        {notifications.slice(0, 5).map((notif, index) => (
+        {notifications.map((notif, index) => (
           <li key={index} className="border-b pb-2 last:border-none">
-            <a
-              href={notif.path.alias}
-              className="text-green-600 hover:underline"
+            <Link
+              to={notif.path.alias}
+              className="text-green-700 hover:underline hover:text-green-900 transition duration-150"
             >
               {notif.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
+      <div className="pt-4 text-right">
+        <Link
+          to="/Notification"
+          className="text-sm text-teal-700 font-medium hover:underline"
+        >
+          View All →
+        </Link>
+      </div>
     </div>
   )
 }

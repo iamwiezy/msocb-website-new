@@ -17,19 +17,15 @@ const About_Section = () => {
       <div className="w-full">
         {/* Hero Section */}
         <div
-          className="relative w-full h-64 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${BannerImage})`,
-          }}
-        >
-          {" "}
-          {/* Update Image Path */}
-          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-            <p className="text-sm uppercase">Home / About</p>
-            <h1 className="text-3xl font-bold">About</h1>
-          </div>
-        </div>
+                className="relative w-full h-60 md:h-72 bg-cover bg-center"
+                style={{ backgroundImage: `url(${BannerImage})` }}
+              >
+                <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm" />
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
+                  <p className="text-sm uppercase tracking-widest">Home / About</p>
+                  <h1 className="text-4xl md:text-5xl font-bold mt-1">About</h1>
+                </div>
+              </div>
 
         {/* About Content */}
         <div className="max-w-7xl mx-auto py-16 px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
@@ -117,7 +113,77 @@ const About_Section = () => {
               rel="noopener noreferrer"
               className="block text-xl font-bold text-green-900 hover:underline"
             >
-              List of Operators under MSOCB
+              List of Operators registered under MSOCB
+            </a>
+            <p className="text-green-700 mt-1 text-sm">
+              Click to view the official spreadsheet of certified operators
+              listed under the Meghalaya State Organic Certification Board.
+            </p>
+          </div>
+
+          {/* Right Arrow */}
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="text-green-500 text-xl"
+          />
+        </div>
+      </div>
+      <div className="cursor-pointer w-full max-w-3xl mx-auto rounded-2xl mb-6 border border-green-900 bg-white px-8 py-6 text-green-900 shadow-lg transition-all duration-300 hover:shadow-xl">
+        <div className="flex items-center space-x-6">
+          {/* Icon Section */}
+          <div className="flex-shrink-0">
+            <div className="h-16 w-16 flex items-center justify-center rounded-full bg-green-100">
+              <FontAwesomeIcon
+                icon={faTable}
+                className="text-green-600 text-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Text Content */}
+          <div className="flex-1">
+            <a
+              href="https://docs.google.com/spreadsheets/d/1mu8sfyrlZ_rQm-WrblQuZMxyWgLZD4b-d3ku38DAJi0/edit?gid=0#gid=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xl font-bold text-green-900 hover:underline"
+            >
+              List of Operators suspended under MSOCB
+            </a>
+            <p className="text-green-700 mt-1 text-sm">
+              Click to view the official spreadsheet of certified operators
+              listed under the Meghalaya State Organic Certification Board.
+            </p>
+          </div>
+
+          {/* Right Arrow */}
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="text-green-500 text-xl"
+          />
+        </div>
+      </div>
+      <div className="cursor-pointer w-full max-w-3xl mx-auto rounded-2xl mb-6 border border-green-900 bg-white px-8 py-6 text-green-900 shadow-lg transition-all duration-300 hover:shadow-xl">
+        <div className="flex items-center space-x-6">
+          {/* Icon Section */}
+          <div className="flex-shrink-0">
+            <div className="h-16 w-16 flex items-center justify-center rounded-full bg-green-100">
+              <FontAwesomeIcon
+                icon={faTable}
+                className="text-green-600 text-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Text Content */}
+          <div className="flex-1"> 
+            <a
+              href="https://docs.google.com/spreadsheets/d/1cdG__W7KOGvdPp1uWVh6Dd4xmDgDKR8f0ixCphONffs/edit?gid=0#gid=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xl font-bold text-green-900 hover:underline"
+            >
+              List of Operators terminated under MSOCB
             </a>
             <p className="text-green-700 mt-1 text-sm">
               Click to view the official spreadsheet of certified operators

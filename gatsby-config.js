@@ -7,6 +7,12 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require("dotenv").config({
+  path: `.env`,
+});
+
+console.log("API_URL:", process.env.API_URL);
 module.exports = {
   pathPrefix: "/msocb_website",
   siteMetadata: {
@@ -43,11 +49,17 @@ module.exports = {
     },
 
     {
-      resolve: "gatsby-source-drupal",
-      options: {
-        baseUrl: "https://be.msocb.org/",
-        apiBase: "jsonapi", // optional
-      },
-    },
+    resolve: `gatsby-source-drupal`,
+    options: {
+    baseUrl: process.env.API_URL,
+    requestTimeout: 30000, // 30 seconds
+    concurrentFileRequests: 2, // lower to avoid overwhelming server
+    skipFileDownloads: false,
+    fastBuilds: true, // skip non-critical files
+    apiBase: 'jsonapi',
+  },
+}
+
   ],
 }
+

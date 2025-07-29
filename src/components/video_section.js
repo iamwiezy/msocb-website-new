@@ -35,7 +35,7 @@ const VideoSection = () => {
   return (
     <>
       <div className="flex items-center justify-center h-full mt-8 mb-8">
-        <div className="relative w-[80%] h-[60vh] overflow-hidden rounded-lg shadow-lg">
+        <div className="relative w-[80%] h-[80vh] overflow-hidden rounded-lg shadow-lg">
           <video
             ref={videoRef}
             className="absolute top-0 left-0 w-full h-full object-cover"
@@ -43,15 +43,16 @@ const VideoSection = () => {
             type="video/mp4"
             loop
             muted
+            autoPlay
           />
 
           {/* Play Button in Center */}
-          <button
+          {/* <button
             onClick={handleTogglePlay}
             className="absolute inset-0 flex items-center justify-center  text-white text-4xl p-6 rounded-full "
           >
             {isPlaying ? <FaPause /> : <FaPlay />}
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="max-w-7xl mx-auto p-6">
