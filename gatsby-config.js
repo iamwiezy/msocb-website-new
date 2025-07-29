@@ -1,25 +1,14 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-
 require("dotenv").config({
   path: `.env`,
 });
 
-console.log("API_URL:", process.env.API_URL);
 module.exports = {
-  pathPrefix: "/msocb_website",
+  // Remove pathPrefix for Vercel
   siteMetadata: {
     title: `MSOCB Website`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Organic Certification Portal for Meghalaya.`,
+    author: `@msocb`,
+    siteUrl: `https://msocb.vercel.app`,
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -37,29 +26,23 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `MSOCB Website`,
-        short_name: `starter`,
+        short_name: `MSOCB`,
         start_url: `/`,
         background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/msocb_logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/msocb_logo.png`,
       },
     },
-
     {
-    resolve: `gatsby-source-drupal`,
-    options: {
-    baseUrl: process.env.API_URL,
-    requestTimeout: 30000, // 30 seconds
-    concurrentFileRequests: 2, // lower to avoid overwhelming server
-    skipFileDownloads: false,
-    fastBuilds: true, // skip non-critical files
-    apiBase: 'jsonapi',
-  },
-}
-
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: process.env.API_URL,
+        requestTimeout: 30000,
+        concurrentFileRequests: 2,
+        skipFileDownloads: false,
+        fastBuilds: true,
+        apiBase: 'jsonapi',
+      },
+    },
   ],
-}
-
+};
